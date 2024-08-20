@@ -1,9 +1,9 @@
 <div class="pokemon-card-container">
  
-  <div *ngFor="let pokemon of pokemons()" class="pokemon-card" (click)="playSound(pokemon?.cries?.latest)" title="Reproducir sonido" style="cursor: pointer; ">
+  <div *ngFor="let pokemon of pokemons()" class="pokemon-card" (click)="openDialog(pokemon.id)">
     <!-- (click)="playSound(pokemon?.cries?.latest)" title="Reproducir sonido" style="cursor: pointer;" -->
     <h1 class="name">{{ pokemon?.species?.name || 'Nombre no disponible' }}</h1>
-    <img class="sprite" (click)="openDialog(personaje.Id)" [src]="pokemon?.sprites?.other?.dream_world?.front_default" [alt]="pokemon?.name || 'Imagen no disponible'">
+    <img class="sprite"  [src]="pokemon?.sprites?.other?.dream_world?.front_default" [alt]="pokemon?.name || 'Imagen no disponible'">
     <h2 class="id">N°{{ pokemon?.id || 'Desconocido' }}</h2>
     <h2 class="types">Estadísticas:</h2>
     <ul>

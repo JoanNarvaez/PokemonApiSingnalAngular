@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [{
-    path: '',
+    path: 'poke-api-signal',
     loadComponent: () =>
         import('./poke-api/poke-api.component')
 }];

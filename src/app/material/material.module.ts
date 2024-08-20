@@ -8,6 +8,8 @@ import { MatSpinner } from '@angular/material/progress-spinner';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { HttpClientModule } from '@angular/common/http';
+import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -19,19 +21,30 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatButtonModule,
     MatListModule,
     MatProgressSpinnerModule,
-    MatDialogModule,
-    BrowserModule,
-    MatSnackBarModule
+    // MatDialogModule,
+    HttpClientModule,
+    // BrowserModule,
+    MatSnackBarModule,
+    MatIconModule,
   ],
   exports:[
+    // CommonModule,
+    // MatCardModule, 
+    // MatButtonModule,
+    // MatListModule,
+    // MatProgressSpinnerModule,
+    // MatDialogModule,
+    // BrowserModule, MatSnackBarModule
     CommonModule,
     MatCardModule, 
     MatButtonModule,
     MatListModule,
     MatProgressSpinnerModule,
-    MatDialogModule,
-    BrowserModule, MatSnackBarModule
-
+    // MatDialogModule,
+    HttpClientModule,
+    // BrowserModule,
+    MatSnackBarModule,
+    MatIconModule,
   ]
 })
 export class MaterialModule { }

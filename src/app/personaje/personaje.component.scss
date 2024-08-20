@@ -1,4 +1,140 @@
-// .example-card {
-//     max-width: 400px;
-//   }
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+.pokemon-card {
+    background: linear-gradient(135deg, #2a2a72, #009ffd);
+    border: 2px solid #00c6ff;
+    border-radius: 15px;
+    padding: 20px;
+    //max-width: 900px; /* Ajusta el tamaño máximo de las tarjetas */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    color: #fff;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+  }
+
+.title {
+    font-size: 28px;
+    color: #00eaff;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.loading {
+    font-size: 24px;
+    color: #ffde59;
+    margin: 20px 0;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.name {
+    font-size: 24px;
+    color: #00ff99;
+    margin: 10px 0;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.sprite {
+    width: 100px; /* Ajusta el tamaño de la imagen del Pokémon */
+    height: 100px;
+    margin: 10px;
+    border: 3px solid #00ff99;
+    border-radius: 50%;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
+  }
+
+.id {
+    font-size: 20px;
+    color: #ff6b6b;
+    margin: 10px 0;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.types, .abilities {
+    font-size: 20px;
+    color: #ffde59;
+    margin: 10px 0;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.no-pokemon, .no-abilities {
+    font-size: 18px;
+    color: #ff4b5c;
+    margin: 10px 0;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.random-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    font-family: 'Orbitron', sans-serif;
+  }
+
+  .random-button:hover {
+    background: linear-gradient(135deg, #2a2a72, #009ffd); 
+  }
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+.pokemon-logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 60px; /* Ajusta el tamaño según tus necesidades */
+    color: #FFCC00; /* Color amarillo */
+    text-shadow: 
+      -2px -2px 0 #3264C8, /* Contorno azul */
+      2px -2px 0 #3264C8, 
+      -2px 2px 0 #3264C8, 
+      2px 2px 0 #3264C8,
+      4px 4px 5px rgba(0, 0, 0, 0.5); /* Sombra */
+    margin: 20px;
+    text-align: center;
+  }
+
+/* Botones de navegación */
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px auto;
+    max-width: 400px;
+  }
   
+
+  .prev-button, .next-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #009ffd;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    font-family: 'Orbitron', sans-serif;
+  }
+
+  .prev-button:hover, .next-button:hover {
+    background-color: #2a2a72;
+  }
+  .centered-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Ajusta el ancho al 100% del contenedor */
+    padding: 20px;
+    margin: 0 auto;
+  }
+  .pokemon-card-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas se ajusten en múltiples líneas si es necesario */
+    gap: 20px; /* Espacio entre las tarjetas */
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+    width: 100%; /* Asegúrate de que el contenedor ocupe todo el ancho disponible */
+    max-width: 2000px; /* Ajusta el ancho máximo según tus necesidades */
+  }
