@@ -10,7 +10,13 @@ export class PokemonService {
 
   constructor(private http: HttpClient) { }
 
-  getPokemon(nameOrId: string): Observable<any> {
-    return this.http.get(`${this.apiUrl}${nameOrId}/`);
+
+  obtenerPersonajes(){
+    return this.http.get(`${this.apiUrl}`)
+  }
+
+
+  getPokemon(Id: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}${Id}/`);
   }
 }
