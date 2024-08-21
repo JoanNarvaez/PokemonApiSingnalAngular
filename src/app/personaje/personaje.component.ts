@@ -1,4 +1,3 @@
-
 import { Component, Inject, OnInit } from '@angular/core';
 import {
   MatDialog,
@@ -8,19 +7,18 @@ import {
 } from '@angular/material/dialog';
 import { PokemonService } from '../services/pokemon.service';
 import { MaterialModule } from '../material/material.module';
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-personaje',
   standalone: true,
-  imports: [MaterialModule,MatDialogTitle, MatDialogContent,MatButtonModule],
+  imports: [MaterialModule, MatDialogTitle, MatDialogContent, MatButtonModule],
   providers: [PokemonService],
   templateUrl: './personaje.component.html',
-  styleUrls: ['./personaje.component.scss']
+  styleUrls: ['./personaje.component.scss'],
 })
 export class PersonajeComponent implements OnInit {
-
   pokemon: any;
   animationArray: string[] = [];
   indiceActual: number = 0;
@@ -40,10 +38,14 @@ export class PersonajeComponent implements OnInit {
         this.pokemon = response;
 
         // Configurar animaciones si están disponibles
-        if (response.sprites && response.sprites.front_default && response.sprites.back_default) {
+        if (
+          response.sprites &&
+          response.sprites.front_default &&
+          response.sprites.back_default
+        ) {
           this.animationArray = [
             response.sprites.front_default,
-            response.sprites.back_default
+            response.sprites.back_default,
           ];
           this.iniciarAnimacion(); // Iniciar animación si hay imágenes
         } else {
@@ -54,7 +56,7 @@ export class PersonajeComponent implements OnInit {
         console.error('Error al obtener Pokémon:', err);
         this.openSnackBarError();
         this.animationArray = [];
-      }
+      },
     });
   }
 
@@ -65,12 +67,16 @@ export class PersonajeComponent implements OnInit {
   playSound(soundSource: string) {
     if (soundSource) {
       const audio = new Audio(soundSource);
-      audio.play().catch(err => console.error('Error al reproducir el sonido:', err));
+      audio
+        .play()
+        .catch((err) => console.error('Error al reproducir el sonido:', err));
     }
   }
 
   openSnackBarError() {
-    this._snackBar.open('Nombre o id de pokemon no válido', 'Cerrar', { duration: 3000 });
+    this._snackBar.open('Nombre o id de pokemon no válido', 'Cerrar', {
+      duration: 3000,
+    });
   }
 
   iniciarAnimacion() {
@@ -84,7 +90,8 @@ export class PersonajeComponent implements OnInit {
     if (this.animating) {
       this.animationInterval = setInterval(() => {
         try {
-          this.indiceActual = (this.indiceActual + 1) % this.animationArray.length;
+          this.indiceActual =
+            (this.indiceActual + 1) % this.animationArray.length;
           this.pokemonImagenActual = this.animationArray[this.indiceActual]; // Actualizar la imagen actual
         } catch (error) {
           this.detenerAnimacion();

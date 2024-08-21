@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/pok-api-signal/browser",
+    "public": "dist/PokApiSignal/browser",
     "ignore": [
       "firebase.json",
       "**/.*",
