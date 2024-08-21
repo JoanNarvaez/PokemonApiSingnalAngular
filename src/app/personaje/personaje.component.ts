@@ -1,3 +1,4 @@
+
 import { Component, Inject, OnInit } from '@angular/core';
 import {
   MatDialog,
@@ -25,6 +26,7 @@ export class PersonajeComponent implements OnInit {
   indiceActual: number = 0;
   animating: boolean = false;
   private animationInterval: any; // Intervalo de animación
+  pokemonImagenActual: string = ''; // Variable para almacenar la imagen actual
 
   constructor(
     private pokemonService: PokemonService,
@@ -74,20 +76,27 @@ export class PersonajeComponent implements OnInit {
   iniciarAnimacion() {
     this.indiceActual = 0;
     this.animating = true;
+    this.pokemonImagenActual = this.animationArray[0]; // Inicializar la imagen actual
     this.animateFrames();
   }
 
   animateFrames() {
     if (this.animating) {
       this.animationInterval = setInterval(() => {
-        this.indiceActual = (this.indiceActual + 1) % this.animationArray.length;
+        try {
+          this.indiceActual = (this.indiceActual + 1) % this.animationArray.length;
+          this.pokemonImagenActual = this.animationArray[this.indiceActual]; // Actualizar la imagen actual
+        } catch (error) {
+          this.detenerAnimacion();
+          console.error('Error en la animación:', error);
+        }
       }, 300);
     }
   }
 
   detenerAnimacion() {
     this.animating = false;
-    if (this.animationInterval) {
+    if (this.animationInterval !== null) {
       clearInterval(this.animationInterval);
     }
   }

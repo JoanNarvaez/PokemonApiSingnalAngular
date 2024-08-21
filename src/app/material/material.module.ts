@@ -11,40 +11,27 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
 
-
-
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    MatCardModule, 
+    MatCardModule,
     MatButtonModule,
     MatListModule,
     MatProgressSpinnerModule,
-    // MatDialogModule,
     HttpClientModule,
-    // BrowserModule,
     MatSnackBarModule,
     MatIconModule,
   ],
-  exports:[
-    // CommonModule,
-    // MatCardModule, 
-    // MatButtonModule,
-    // MatListModule,
-    // MatProgressSpinnerModule,
-    // MatDialogModule,
-    // BrowserModule, MatSnackBarModule
+  exports: [
     CommonModule,
-    MatCardModule, 
+    MatCardModule,
     MatButtonModule,
     MatListModule,
     MatProgressSpinnerModule,
-    // MatDialogModule,
     HttpClientModule,
-    // BrowserModule,
     MatSnackBarModule,
     MatIconModule,
-  ]
+  ],
 })
-export class MaterialModule { }
+export class MaterialModule {}

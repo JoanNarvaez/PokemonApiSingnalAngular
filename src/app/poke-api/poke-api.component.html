@@ -1,9 +1,8 @@
 <div class="pokemon-card-container">
- 
   <div *ngFor="let pokemon of pokemons()" class="pokemon-card" (click)="openDialog(pokemon.id)">
-    <!-- (click)="playSound(pokemon?.cries?.latest)" title="Reproducir sonido" style="cursor: pointer;" -->
     <h1 class="name">{{ pokemon?.species?.name || 'Nombre no disponible' }}</h1>
-    <img class="sprite"  [src]="pokemon?.sprites?.other?.dream_world?.front_default" [alt]="pokemon?.name || 'Imagen no disponible'">
+    <img class="sprite" (click)="playSound(pokemon?.cries?.latest)" [src]="pokemon?.sprites?.other?.dream_world?.front_default"
+      [alt]="pokemon?.name || 'Imagen no disponible'">
     <h2 class="id">N°{{ pokemon?.id || 'Desconocido' }}</h2>
     <h2 class="types">Estadísticas:</h2>
     <ul>
@@ -11,13 +10,9 @@
         {{ stat.stat.name }}: {{ stat.base_stat }}
       </li>
     </ul>
-    
   </div>
-
 </div>
-
 <div class="centered-container">
-  
   <p *ngIf="!loading() && pokemons().length === 0" class="no-data-message">No se encontraron Pokémon.</p>
   <button class="random-button" mat-raised-button color="primary" (click)="loadPokemon()">Cargar Pokémon</button>
 </div>
